@@ -390,24 +390,44 @@ body {
   font-size: 13px;
 }
 .aisels-subheading,
-.how-it-works-subheading {
+.how-it-works-subheading,
+.weekly-picks-subheading {
   color: #4a7c59;
   font-size: 12px;
 }
 .aisels-heading,
-.how-it-works-heading {
+.how-it-works-heading,
+.weekly-picks-heading {
   font-family: "Source Serif 4", serif;
   font-size: 27px;
   font-weight: 400;
 }
 
 .aisels-cards-wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* justify-content: space-between; */
   margin-top: 30px;
   flex-wrap: wrap;
   gap: 20px;
 }
+
+@media (max-width: 900px) {
+  .aisels-cards-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .aisels-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 350px) {
+  .aisels-cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 .aisels-card {
   border: 1px solid #e3decb;
   border-radius: 12px;
@@ -495,10 +515,590 @@ body {
   font-size: 13px;
 }
 
-
-
-@media(max-width: 640px){
-  .how-it-works{
+@media (max-width: 640px) {
+  .how-it-works {
     flex-direction: column;
+  }
+}
+
+.weekly-picks {
+  background-color: #faf7ee;
+  padding: 50px 20px;
+}
+.weekly-picks-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.weekly-picks-filters {
+  display: flex;
+  gap: 8px;
+  align-self: flex-end;
+}
+.filter-button {
+  border: 1px solid #e3decb;
+  background-color: white;
+  color: #1f2e24;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+.filter-button:hover {
+  border-color: #2f5d39;
+}
+.filter-button.active {
+  background-color: #223929;
+  border-color: #223929;
+  color: white;
+}
+
+.weekly-picks-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 30px;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .weekly-picks-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .weekly-picks-cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  background-color: white;
+  border: 1px solid #e3decb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-card-image {
+  position: relative;
+}
+.product-card-image > img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.product-card-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #faf7ee;
+  color: #1f2e24;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 30px;
+}
+
+.product-card-content {
+  padding: 15px 12px;
+}
+.product-card-content > h4 {
+  font-weight: 600;
+  color: #1f2e24;
+  font-size: 13px;
+}
+.product-card-content > p {
+  font-size: 11px;
+  color: #6f6a5c;
+  margin-top: 3px;
+}
+
+.product-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+.product-price {
+  font-weight: 600;
+  color: #1f2e24;
+  font-size: 13px;
+}
+.add-button {
+  height: 28px;
+  width: 28px;
+  border: none;
+  border-radius: 100%;
+  background-color: #2f5d39;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.add-button:hover {
+  background-color: #223929;
+}
+
+/* =========================================
+   PROMOTIONAL BANNERS
+========================================= */
+
+.weekly-picks-promos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 28px;
+  width: 100%;
+}
+
+/* Salad promotion */
+
+.salad-promo {
+  background-color: #203b2b;
+  color: #f9f7ef;
+  padding: 17px 16px;
+  border-radius: 14px;
+  min-height: 108px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.promo-tag {
+  background-color: #f2c500;
+  color: #273b2c;
+  font-family: "DM Sans", sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  padding: 4px 7px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.salad-promo h3 {
+  font-family: "Source Serif 4", serif;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 9px 0 5px;
+}
+
+.salad-promo p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  color: #bfc8bd;
+  margin: 0;
+}
+
+.salad-promo-footer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.deal-button {
+  background-color: #f8f6ed;
+  color: #263d2c;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  padding: 7px 11px;
+  border-radius: 20px;
+}
+
+.salad-promo-footer span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 7px;
+  color: #bfc8bd;
+}
+
+/* =========================================
+   APP DOWNLOAD PROMOTION
+========================================= */
+
+.app-promo {
+  background-color: #f7e8d5;
+  border: 1px solid #f0dfc9;
+  border-radius: 14px;
+  padding: 17px 15px;
+  min-height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.app-promo-content {
+  flex: 1;
+}
+
+.app-promo-content h3 {
+  font-family: "Source Serif 4", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #293b2e;
+  margin: 0 0 7px;
+}
+
+.app-promo-content p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  line-height: 1.5;
+  color: #898477;
+  margin: 0 0 10px;
+}
+
+.app-download-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.app-button {
+  background-color: #203b2b;
+  color: #fff;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 7px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* =========================================
+   QR CODE DESIGN
+========================================= */
+
+.qr-wrapper {
+  background-color: #fff;
+  padding: 7px;
+  border-radius: 8px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.qr-code {
+  width: 65px;
+  height: 65px;
+  background-color: #edf0df;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-pattern {
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.qr-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 6px;
+}
+
+.qr-row span {
+  display: block;
+  height: 5px;
+  flex: 1;
+  background-color: #294a34;
+}
+
+.qr-row:nth-child(1) span:nth-child(2) {
+  flex: 0.5;
+}
+
+.qr-row:nth-child(2) span:nth-child(1) {
+  flex: 0.6;
+}
+
+.qr-row:nth-child(3) span:nth-child(3) {
+  flex: 0.5;
+}
+
+.qr-wrapper small {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 7px;
+  color: #53604f;
+  margin-top: 6px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer-container {
+  background-color: #203b2b;
+  color: #f8f6ed;
+  padding: 30px 0 15px;
+  margin-top: 28px;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 850px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 55px;
+  padding-bottom: 22px;
+}
+
+/* Footer brand */
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-logo {
+  width: 16px;
+  height: 16px;
+  background-color: #f8f6ed;
+  border-radius: 50%;
+}
+
+.footer-logo-container h3 {
+  font-family: "Source Serif 4", serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.footer-brand p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  line-height: 1.6;
+  color: #aab9a9;
+  max-width: 190px;
+  margin-top: 10px;
+}
+
+/* Footer navigation */
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.footer-links h5 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+  color: #92a492;
+  margin: 0 0 2px;
+}
+
+.footer-links a {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  color: #d0d8ce;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* Footer bottom */
+
+.footer-bottom {
+  max-width: 850px;
+  margin: 0 auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 7px;
+  color: #8fa18e;
+  margin: 0;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+  .footer-content,
+  .footer-bottom {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+  .weekly-picks-promos {
+    grid-template-columns: 1fr;
+  }
+
+  .salad-promo,
+  .app-promo {
+    min-height: 130px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-promo {
+    padding: 12px 9px;
+  }
+
+  .app-promo-content h3 {
+    font-size: 12px;
+  }
+
+  .app-button {
+    font-size: 6px;
+    padding: 6px;
+  }
+
+  .qr-code {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* =====================================
+   FINAL LAYOUT CORRECTIONS
+===================================== */
+
+/* Centre weekly picks content */
+
+.weekly-picks-header,
+.weekly-picks-cards-wrapper,
+.weekly-picks-promos {
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Product cards */
+
+.weekly-picks-cards-wrapper {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.product-card-image > img {
+  height: 110px;
+  object-fit: cover;
+}
+
+.product-card-content {
+  padding: 9px;
+}
+
+.product-card-content > h4 {
+  font-size: 10px;
+}
+
+.product-card-content > p {
+  font-size: 8px;
+}
+
+.product-card-footer {
+  margin-top: 13px;
+}
+
+.product-price {
+  font-size: 9px;
+}
+
+/* Promotional banners */
+
+.weekly-picks-promos {
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.salad-promo,
+.app-promo {
+  min-height: 143px;
+}
+
+/* Footer */
+
+.footer-container {
+  margin-top: 0;
+}
+
+.footer-content,
+.footer-bottom {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Remove unwanted space */
+
+.weekly-picks {
+  padding-bottom: 28px;
+}
+
+body {
+  background-color: #faf7ee;
+}
+
+/* Responsive layout */
+
+@media (max-width: 950px) {
+  .weekly-picks-header,
+  .weekly-picks-cards-wrapper,
+  .weekly-picks-promos {
+    max-width: 100%;
+  }
+
+  .footer-content,
+  .footer-bottom {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .weekly-picks-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weekly-picks-promos {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
   }
 }
